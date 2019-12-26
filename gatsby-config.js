@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.DEPLOY_URL ? 'https://veganoslibres-strapi.herokuapp.com' : `http://localhost:1337`,
+        contentTypes: ['recetas'],
+        queryLimit: 1000
+      },
+    },    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
